@@ -59,5 +59,16 @@
       "title": "現在のシーズンのガチバマップ",
       "description": "現在のシーズンで実際にプレイされているガチバトルのマップを表示"
     }
-  } 
+  },
+  "playerDetail": {
+    "title": "プレイヤー詳細",
+    "playerInfoSection": {
+      "title": "プレイヤー基本情報",
+      "description": "アイコン、Tag、名前、クラブ、現在のランク、トロフィー、キャラクター数(レベル、ガジェ、スタパ、ギア)などの基本情報を表示"
+    },
+    "playerBattleHistorySection": {
+      "title": "バトル履歴",
+      "description": "直近のバトル履歴25件を一覧表示。各バトルの詳細情報(モード、マップ、使用キャラ、勝敗、MVP)も確認可能"
+    }
+  }
 }
