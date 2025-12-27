@@ -1,8 +1,7 @@
 import { NextIntlClientProvider } from "next-intl";
-import { getMessages } from "next-intl/server";
+import { setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../_i18n/routing";
-import { setRequestLocale } from "next-intl/server";
 
 type Locale = (typeof routing.locales)[number];
 

@@ -1,6 +1,4 @@
-import feature1s from "./page.module.scss";
-import { getTranslations } from "next-intl/server";
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import styles from "./page.module.scss";
 
 export default async function Page({

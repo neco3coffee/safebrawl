@@ -32,8 +32,8 @@
         "answer": "safebrawlは定期的に利敵プレイヤーのオンラインステータスをチェックし、最新の情報を提供します。"
       },
       "question3": {
-        "question": "戦績データはどのように保存されますか？",
-        "answer": "戦績データは安全に保存され、ユーザーがいつでもアクセスできるようになっています。"
+        "question": "ガチバトル自動記録や戦績生成はどのように機能しますか？",
+        "answer": "ログイン後に自動記録を有効にすると, シーズン中のガチバトルのバトル履歴を30分ごとに取得・保存し、統計ページにて戦績を確認できます。"
       }
     },
     "CallToActionSection": {
@@ -41,5 +41,23 @@
       "description": "利敵プレイヤーを避け、快適なガチバトル体験を手に入れましょう。",
       "buttonText": "無料で始める"
     }
-  }
+  },
+  "home": {
+    "playerTagSearchSection": {
+      "title": "Tagプレイヤー検索機能",
+      "description": "tagでプレイヤーを検索して、そのプレイヤーの詳細画面へ移動(例: #ABCD1234)"
+    },
+    "cheaterTimeHeatmapSection": {
+      "title": "利敵プレイヤー活動ヒートマップ",
+      "description": "リアルタイムの利敵プレイヤー活動を時間帯別にヒートマップで表示"
+    },
+    "rankedTopPlayersStatsSection": {
+      "title": "トッププレイヤーランキング10の統計情報",
+      "description": "現在のシーズンにおける勝率上位10プレイヤーのCardを一覧表示"
+    },
+    "currentSeasonRankedMapSection": {
+      "title": "現在のシーズンのガチバマップ",
+      "description": "現在のシーズンで実際にプレイされているガチバトルのマップを表示"
+    }
+  } 
 }
