@@ -75,7 +75,7 @@ export default function PageList({
 }) {
   return (
     <div className={styles.container}>
-      <h1>プロジェクト構成を変えた変更が正常にgithub x actionsからデプロイされ反映されてるか確認テキスト!1</h1>
+      <Link href={`/api`} >疎通確認リンク /api</Link>
       <ul className={styles.pageList}>
         {paths.map(({path, name, implemented, "cache-duration": cacheDuration}) => (
           <li key={path} className={styles.pageListItem}>
