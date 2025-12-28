@@ -16,6 +16,9 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
 
+    env:
+      API_URL: ${{ secrets.API_URL }}
+
     steps:
       - uses: actions/checkout@v4
 

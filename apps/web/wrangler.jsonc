@@ -52,7 +52,8 @@
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
 	 */
-	"vars": {  
-		"NEXT_PUBLIC_API_URL": "https://safebrawl-api.neco3coffee.workers.dev" 
-	}
+	//  Next.jsはprocess.env.XXXをビルド時に読み取ってJSに埋め込むので本番Worker上でvarsを変えても、アプリコード側のprocess.env.API_URLは変わらないためコメントアウト
+	// "vars": {  
+	// 	"API_URL": "XXX"
+	// }
 }
