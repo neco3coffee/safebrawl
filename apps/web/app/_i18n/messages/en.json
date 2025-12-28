@@ -1,5 +1,84 @@
 {
   "landing": {
-    "title": "welcome to safebrawl"
+    "title": "safebrawlへようこそ",
+    "HeroSection": {
+      "title": "利敵プレイヤーを簡単に回避",
+      "description": "自責か他責の二元論を超えて、現実的にやばい利敵プレイヤーは避けて自衛し、快適にガチバトルを楽しみましょう。"
+    },
+    "FeatureSection": {
+      "feature1": {
+        "title": "利敵リスト",
+        "description": "直近でマッチした利敵プレイヤーを簡単に報告しリスト化。"
+      },
+      "feature2": {
+        "title": "利敵プレイヤー自動追跡機能",
+        "description": "利敵プレイヤーが現在オンラインかどうかを自動で追跡しリストで確認可能。"
+      },
+      "feature3": {
+        "title": "ガチバトル自動記録&戦績生成",
+        "description": "自動記録をオンにすることで、シーズン中のガチバトル履歴を保存し、戦績を生成。"
+      }
+    },
+    "SocialProofSection": {
+      "title": "ユーザーの声"
+    },
+    "FAQSection": {
+      "question1": {
+        "question": "どのように利敵プレイヤーを特定するのですか？",
+        "answer": "直近のバトル履歴からプレイヤーを選択して報告することで、利敵プレイヤーのリストを作成することができます"
+    },
+      "question2": {
+        "question": "利敵プレイヤーのオンライン状況はどのように追跡されますか？",
+        "answer": "safebrawlは定期的に利敵プレイヤーのオンラインステータスをチェックし、最新の情報を提供します。"
+      },
+      "question3": {
+        "question": "ガチバトル自動記録や戦績生成はどのように機能しますか？",
+        "answer": "ログイン後に自動記録を有効にすると, シーズン中のガチバトルのバトル履歴を30分ごとに取得・保存し、統計ページにて戦績を確認できます。"
+      }
+    },
+    "CallToActionSection": {
+      "title": "今すぐsafebrawlを使ってみましょう!",
+      "description": "利敵プレイヤーを避け、快適なガチバトル体験を手に入れましょう。",
+      "buttonText": "無料で始める"
+    }
+  },
+  "home": {
+    "playerTagSearchSection": {
+      "title": "Tagプレイヤー検索機能",
+      "description": "tagでプレイヤーを検索して、そのプレイヤーの詳細画面へ移動(例: #ABCD1234)"
+    },
+    "cheaterTimeHeatmapSection": {
+      "title": "利敵プレイヤー活動ヒートマップ",
+      "description": "リアルタイムの利敵プレイヤー活動を時間帯別にヒートマップで表示"
+    },
+    "rankedTopPlayersStatsSection": {
+      "title": "トッププレイヤーランキング10の統計情報",
+      "description": "現在のシーズンにおける勝率上位10プレイヤーのCardを一覧表示"
+    },
+    "currentSeasonRankedMapSection": {
+      "title": "現在のシーズンのガチバマップ",
+      "description": "現在のシーズンで実際にプレイされているガチバトルのマップを表示"
+    }
+  },
+  "playerDetail": {
+    "title": "プレイヤー詳細",
+    "playerInfoSection": {
+      "title": "プレイヤー基本情報",
+      "description": "アイコン、Tag、名前、クラブ、現在のランク、トロフィー、キャラクター数(レベル、ガジェ、スタパ、ギア)などの基本情報を表示"
+    },
+    "playerBattleHistorySection": {
+      "title": "バトル履歴",
+      "description": "直近のバトル履歴25件を一覧表示。各バトルの詳細情報(モード、マップ、使用キャラ、勝敗、MVP)も確認可能"
+    }
+  },
+  "mapDetail": {
+    "title": "マップ詳細",
+    "mapInfoSection": {
+      "title": "マップ画像"
+    },
+    "mapUsedBrawlerRankingSection": {
+      "title": "使用キャラランキング",
+      "description": "ガチバトルの上位勢によく使われているキャラのランキング&勝率を表示"
+    }
   }
 }

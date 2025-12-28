@@ -8,13 +8,12 @@ on:
       - 'apps/web/**'
       - 'packages/**'
 
-defaults:
-  run:
-    working-directory: apps/web
-
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/web
 
     steps:
       - uses: actions/checkout@v4
