@@ -8,12 +8,13 @@ on:
       - 'apps/web/**'
       - 'packages/**'
 
+defaults:
+  run:
+    working-directory: apps/web
+
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: apps/web
 
     steps:
       - uses: actions/checkout@v4
@@ -21,7 +22,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-          cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
