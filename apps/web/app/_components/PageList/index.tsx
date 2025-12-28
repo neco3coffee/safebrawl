@@ -1,5 +1,5 @@
 
-import { routing } from "@/app/_i18n/routing"
+import { routing } from "../../_i18n/routing"
 import Link from "next/link";
 import styles from "./index.module.scss";
 
@@ -9,6 +9,12 @@ const paths = [
     "name": "ランディングページ",
     "implemented": false,
     "cache-duration": "1 year"
+  },
+  {
+    "path": "/home",
+    "name": "ホームページ",
+    "implemented": false,
+    "cache-duration": "1 hour"
   },
   {
     "path": "/players/Y2YPGCGC",
@@ -23,8 +29,8 @@ const paths = [
     "cache-duration": "1 hour"
   },
   {
-    "path": "/home",
-    "name": "ホームページ",
+    "path": "/maps/123456",
+    "name": "マップ詳細ページ(マップ画像&使用キャラランキング&勝率)",
     "implemented": false,
     "cache-duration": "1 hour"
   },

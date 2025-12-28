@@ -70,5 +70,15 @@
       "title": "バトル履歴",
       "description": "直近のバトル履歴25件を一覧表示。各バトルの詳細情報(モード、マップ、使用キャラ、勝敗、MVP)も確認可能"
     }
+  },
+  "mapDetail": {
+    "title": "マップ詳細",
+    "mapInfoSection": {
+      "title": "マップ画像"
+    },
+    "mapUsedBrawlerRankingSection": {
+      "title": "使用キャラランキング",
+      "description": "ガチバトルの上位勢によく使われているキャラのランキング&勝率を表示"
+    }
   }
 }
