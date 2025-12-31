@@ -2,13 +2,13 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "safebrawl-api",
   "main": "src/index.ts",
-  "compatibility_date": "2025-12-28"
+  "compatibility_date": "2025-12-28",
+  "vars": {
+    "PROXY_TARGET_URL": "https://proxy.safebrawl.com"
+  }
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
-  // "vars": {
-  //   "MY_VAR": "my-variable"
-  // },
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",
