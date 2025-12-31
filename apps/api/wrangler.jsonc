@@ -5,7 +5,7 @@
   "compatibility_date": "2025-12-28",
   "vars": {
     "PROXY_TARGET_URL": "https://proxy.safebrawl.com"
-  }
+  },
   // "compatibility_flags": [
   //   "nodejs_compat"
   // ],
@@ -31,8 +31,7 @@
   // "ai": {
   //   "binding": "AI"
   // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+  "observability": {
+    "enabled": true,
+  }
 }
