@@ -5,6 +5,7 @@ export const dynamic = 'force-dynamic'
 interface PlayerData {
   name: string
   tag: string
+  brawlers: Array<any>
 }
 
 export default async function Page() {
@@ -15,7 +16,9 @@ export default async function Page() {
   const proxyTargetUrl = process.env.PROXY_TARGET_URL
   const proxyResponse = await fetch(`${proxyTargetUrl}/v1/players/%23y2ypgcgc`)
   const playerData: PlayerData = await proxyResponse.json()
-  const { name, tag } = playerData
+  const { name, tag, brawlers } = playerData
+
+  console.log('Fetched Player :', `name: ${name}, tag: ${tag}, brawler count: ${brawlers?.length || 0}`)
 
 
   return (

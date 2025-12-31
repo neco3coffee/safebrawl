@@ -1,10 +1,12 @@
 import { Hono } from 'hono'
+import { logger } from 'hono/logger'
 
 type Bindings = {
   PROXY_TARGET_URL: string
 }
 
 const app = new Hono<{ Bindings: Bindings }>()
+app.use('*', logger())
 app.route('/api', app)
 
 app.get('/', (c) => {
