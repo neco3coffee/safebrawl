@@ -19,7 +19,8 @@
 			}
 		],
 		"paths": {
-			"@/*": ["./app/*"]
+			"@/*": ["./app/*"],
+			"shared/*": ["../../packages/shared/*"]
 		},
 		"types": [
 			"./cloudflare-env.d.ts",
