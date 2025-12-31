@@ -1,5 +1,2 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 # Run linting before commit for apps/web and apps/api with parallel execution
 npm run lint

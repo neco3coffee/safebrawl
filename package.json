@@ -1,18 +1,9 @@
 {
   "devDependencies": {
-    "husky": "^9.1.7",
-    "lint-staged": "^16.2.7"
+    "husky": "^9.1.7"
   },
   "scripts": {
     "prepare": "husky",
-    "lint": "lint-staged"
-  },
-  "lint-staged": {
-    "apps/web/**/*.{ts,tsx}": [
-      "cd apps/web && npm run lint"
-    ],
-    "apps/api/**/*.{ts,tsx}": [
-      "cd apps/api && npm run lint"
-    ]
+    "lint": "npm --prefix apps/web run lint && npm --prefix apps/api run lint"
   }
 }
