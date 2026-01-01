@@ -1,14 +1,14 @@
 /**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
- */
+* For more details on how to configure Wrangler, refer to:
+* https://developers.cloudflare.com/workers/wrangler/configuration/
+*/
 /**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
- */
+* For more details on how to configure Wrangler, refer to:
+* https://developers.cloudflare.com/workers/wrangler/configuration/
+*/
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "safebrawl-web",
+	"name": "safebrawl-web-local",
 	"main": ".open-next/worker.js",
 	"compatibility_date": "2025-12-01",
 	"compatibility_flags": [
@@ -17,13 +17,34 @@
 	],
 	"routes": [
 		{
-			"pattern": "dev-web.safebrawl.com",
+			"pattern": "local-web.safebrawl.com",
 			"custom_domain": true
+		}
+	],
+	"services": [
+		{
+			// Self-reference service binding, the service name must match the worker name
+			// see https://opennext.js.org/cloudflare/caching
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "safebrawl-web-local"
 		}
 	],
 	"env": {
 		"production": {
 			"name": "safebrawl-web-prod",
+			"services": [
+				{
+					// Self-reference service binding, the service name must match the worker name
+					// see https://opennext.js.org/cloudflare/caching
+					"binding": "WORKER_SELF_REFERENCE",
+					"service": "safebrawl-web-prod"
+				}
+			],
+			"images": {
+				// Enable image optimization
+				// see https://opennext.js.org/cloudflare/howtos/image
+				"binding": "IMAGES"
+			},
 			"routes": [
 				{
 					"pattern": "safebrawl.com",
@@ -33,6 +54,19 @@
 		},
 		"development": {
 			"name": "safebrawl-web-dev",
+			"services": [
+				{
+					// Self-reference service binding, the service name must match the worker name
+					// see https://opennext.js.org/cloudflare/caching
+					"binding": "WORKER_SELF_REFERENCE",
+					"service": "safebrawl-web-dev"
+				}
+			],
+			"images": {
+				// Enable image optimization
+				// see https://opennext.js.org/cloudflare/howtos/image
+				"binding": "IMAGES"
+			},
 			"routes": [
 				{
 					"pattern": "dev-web.safebrawl.com",
@@ -50,14 +84,6 @@
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
 	},
-	"services": [
-		{
-			// Self-reference service binding, the service name must match the worker name
-			// see https://opennext.js.org/cloudflare/caching
-			"binding": "WORKER_SELF_REFERENCE",
-			"service": "safebrawl-web"
-		}
-	],
 	"observability": {
 		"enabled": true
 	},
