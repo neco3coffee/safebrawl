@@ -1,13 +1,13 @@
-name: Deploy Web
+name: Deploy production Web
 
 on: 
   push:
     branches:
-      - dev
+      - main
     paths:
       - 'apps/web/**'
       - 'packages/**'
-      - '.github/workflows/deploy-web.yml'
+      - '.github/workflows/prod-web_deploy.yml'
 
 defaults:
   run:
@@ -32,8 +32,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Deploy Web
-        run: npm run deploy
+      - name: Deploy Web to Production
+        run: npm run deploy --env production
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

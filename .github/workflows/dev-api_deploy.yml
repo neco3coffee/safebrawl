@@ -1,4 +1,4 @@
-name: Deploy API
+name: Deploy development API
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     paths:
       - 'apps/api/**'
       - 'packages/**'
-      - '.github/workflows/deploy-api.yml'
+      - '.github/workflows/dev-api_deploy.yml'
 
 defaults:
   run:
@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Deploy API
-        run: npm run deploy
+      - name: Deploy API to Dev
+        run: npm run deploy --env development
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

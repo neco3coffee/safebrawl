@@ -15,6 +15,32 @@
 		"nodejs_compat",
 		"global_fetch_strictly_public"
 	],
+	"routes": [
+		{
+			"pattern": "dev-web.safebrawl.com",
+			"custom_domain": true
+		}
+	],
+	"env": {
+		"production": {
+			"name": "safebrawl-web-prod",
+			"routes": [
+				{
+					"pattern": "safebrawl.com",
+					"custom_domain": true
+				}
+			]
+		},
+		"development": {
+			"name": "safebrawl-web-dev",
+			"routes": [
+				{
+					"pattern": "dev-web.safebrawl.com",
+					"custom_domain": true
+				}
+			]
+		} 
+	},
 	"assets": {
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
@@ -29,7 +55,7 @@
 			// Self-reference service binding, the service name must match the worker name
 			// see https://opennext.js.org/cloudflare/caching
 			"binding": "WORKER_SELF_REFERENCE",
-			"service": "safebrawl"
+			"service": "safebrawl-web"
 		}
 	],
 	"observability": {
