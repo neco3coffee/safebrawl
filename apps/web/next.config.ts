@@ -3,6 +3,29 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
 	/* config options here */
+	async headers() {
+		return [
+			{
+				source: '/:locale(ja|en)',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=3600, s-maxage=86400'
+					}
+				]
+			},
+			// /ja, /en etc
+			{
+				source: '/:locale(ja|en)/home',
+				headers: [
+					{
+						key: 'Cache-Control',
+						value: 'public, max-age=3600, s-maxage=86400'
+					}
+				]
+			}
+		]
+	}
 };
 
 const withNextIntl = createNextIntlPlugin(

@@ -7,7 +7,6 @@ type Bindings = {
 
 const app = new Hono<{ Bindings: Bindings }>()
 app.use('*', logger())
-app.route('/api', app)
 
 app.get('/', (c) => {
   const proxyTargetUrl = c.env.PROXY_TARGET_URL
