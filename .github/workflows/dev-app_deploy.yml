@@ -1,20 +1,25 @@
-name: Deploy development Web
+name: Deploy development App
 
-on:
+on: 
   push:
     branches:
       - dev
     paths:
-      - 'apps/web/**'
+      - 'apps/app/**'
       - 'packages/**'
-      - '.github/workflows/dev-web_deploy.yml'
+      - '.github/workflows/dev-app_deploy.yml'
 
 defaults:
   run:
-    working-directory: apps/web
+    working-directory: apps/app
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
+
+    env:
+      API_URL: ${{ secrets.API_URL }}
+      PROXY_TARGET_URL: ${{ secrets.PROXY_TARGET_URL }}
+
 
     steps:
       - uses: actions/checkout@v4
@@ -26,11 +31,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: build Web with static export, output to ./out
-        run: npm run build
-
-      - name: Deploy Web to Dev
-        run: npx wrangler pages deploy ./out --project-name=safebrawl-web-dev
+      - name: Deploy App to Dev
+        run: npm run deploy:development
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

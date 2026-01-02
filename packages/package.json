@@ -1,0 +1,12 @@
+{
+  "name": "packages",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
+    "eslint": "^9.39.2"
+  }
+}

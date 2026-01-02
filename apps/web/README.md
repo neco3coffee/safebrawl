@@ -1,47 +1,27 @@
-# OpenNext Starter
+# Next.js Static Export
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Next.js enables starting as a static site or Single-Page Application (SPA), then later optionally upgrading to use features that require a server.
 
-## Getting Started
+When running `next build`, Next.js generates an HTML file per route. By breaking a strict SPA into individual HTML files, Next.js can avoid loading unnecessary JavaScript code on the client-side, reducing the bundle size and enabling faster page loads.
 
-Read the documentation at https://opennext.js.org/cloudflare.
+Learn more: https://nextjs.org/docs/app/building-your-application/deploying/static-exports
 
-## Develop
+## Deploy your own
 
-Run the Next.js development server:
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-static-export)
 
-```bash
-npm run dev
-# or similar package manager command
-```
+## How to use
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-## Preview
-
-Preview the application locally on the Cloudflare runtime:
+Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
 ```bash
-npm run preview
-# or similar package manager command
+npx create-next-app --example with-static-export with-static-export-app
 ```
-
-## Deploy
-
-Deploy the application to Cloudflare:
 
 ```bash
-npm run deploy
-# or similar package manager command
+yarn create next-app --example with-static-export with-static-export-app
 ```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm create next-app --example with-static-export with-static-export-app
+```

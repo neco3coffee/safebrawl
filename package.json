@@ -4,6 +4,6 @@
   },
   "scripts": {
     "prepare": "husky",
-    "lint": "npm --prefix apps/web run lint && npm --prefix apps/api run lint"
+    "lint": "npm --prefix apps/web run lint && npm --prefix apps/api run lint && npm --prefix apps/app run lint && npm --prefix packages run lint"
   }
 }

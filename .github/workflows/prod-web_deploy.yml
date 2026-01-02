@@ -1,6 +1,6 @@
 name: Deploy production Web
 
-on: 
+on:
   push:
     branches:
       - main
@@ -8,19 +8,12 @@ on:
       - 'apps/web/**'
       - 'packages/**'
       - '.github/workflows/prod-web_deploy.yml'
-
 defaults:
   run:
     working-directory: apps/web
-
 jobs:
-  deploy-dev:
+  deploy-prod:
     runs-on: ubuntu-latest
-
-    env:
-      API_URL: ${{ secrets.API_URL }}
-      PROXY_TARGET_URL: ${{ secrets.PROXY_TARGET_URL }}
-
 
     steps:
       - uses: actions/checkout@v4
@@ -32,8 +25,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Deploy Web to Production
-        run: npm run deploy:production
+      - name: build Web with static export, output to ./out
+        run: npm run build
+
+      - name: Deploy Web to Prod
+        run: npx wrangler pages deploy ./out --project-name=safebrawl-web-prod
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
