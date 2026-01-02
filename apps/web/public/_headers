@@ -1,5 +1,1 @@
-/
-  Cache-Control: public, max-age=3600, s-maxage=86400
-
-/about
-  Cache-Control: public, max-age=10, s-maxage=60
+# cacheはcloudflare dashboardのcache rulesでall incoming requestで一旦設定
