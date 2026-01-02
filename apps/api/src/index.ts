@@ -10,7 +10,7 @@ app.use('*', logger())
 
 app.get('/', (c) => {
   const proxyTargetUrl = c.env.PROXY_TARGET_URL
-  return c.text(`Hello Hono! Proxy URL: ${proxyTargetUrl}`)
+  return c.text(`Hello Hono!! Proxy URL: ${proxyTargetUrl}`)
 })
 
 export default app
