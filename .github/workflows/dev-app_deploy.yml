@@ -9,9 +9,6 @@ on:
       - 'packages/**'
       - '.github/workflows/dev-app_deploy.yml'
 
-defaults:
-  run:
-    working-directory: apps/app
 jobs:
   deploy-dev:
     runs-on: ubuntu-latest
@@ -30,9 +27,12 @@ jobs:
           node-version: '20'
 
       - name: Install dependencies
-        run: npm ci
+        run: |
+          npm ci
+          npm ci --prefix apps/app
 
       - name: Deploy App to Dev
+        working-directory: apps/app
         run: npm run deploy:development
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
