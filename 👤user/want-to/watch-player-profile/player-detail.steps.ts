@@ -28,3 +28,17 @@ Then('プレイヤー名{string}が表示される', async function (name: strin
   await page.close();
   await browser.close();
 });
+
+
+Then('バトル履歴が8個以上は表示される', async function () {
+  const battleHistoryItems = page.locator('[data-testid="battle-history-item"]');
+  const itemCount = await battleHistoryItems.count();
+  // brawl stars apiの使用上、25セットのバトル履歴が返ってくる。
+  // そして、ガチバトルの場合は最大３セット分のバトル履歴を1つにまとめて表示する
+  // 25 / 3 = 8.33 よって、8個以上のバトル履歴が表示されることを確認する
+  expect(itemCount).toBeGreaterThanOrEqual(8);
+  
+  // クリーンアップ
+  await page.close();
+  await browser.close();
+});
