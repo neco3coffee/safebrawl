@@ -1,5 +1,4 @@
 
-import { routing } from "../../../../apps/web/app/_i18n/routing";
 import styles from "./index.module.scss";
 
 const webURL = process.env.NEXT_PUBLIC_ENV === "local" ? "http://localhost:3111" 
@@ -81,8 +80,9 @@ const paths = [
     "cache-duration": "No Cache(cookie) -> clientでSWR(5分)"
   }
 ]
+const locales = ['ja', 'en'] as const;
 
-type Locale = (typeof routing.locales)[number];
+type Locale = (typeof locales)[number];
 
 export default function PageList({
   locale,
