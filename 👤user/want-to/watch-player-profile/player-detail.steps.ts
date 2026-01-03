@@ -18,6 +18,9 @@ When('ユーザーが{string}をtagのinputに入力した', async function (tag
   const input = page.locator('input[data-testid="player-tag-input"]');
   await input.fill(tag);
   await input.press('Enter');
+  
+  // ページ遷移を待つ
+  await page.waitForURL(`**/${tag.toUpperCase()}`, { timeout: 10000 });
 });
 
 Then('プレイヤー名{string}が表示される', async function (name: string) {
@@ -30,15 +33,30 @@ Then('プレイヤー名{string}が表示される', async function (name: strin
 });
 
 
-Then('バトル履歴が8個以上は表示される', async function () {
+Then('バトル履歴が{string}個以上は表示される', async function (count: string) {
+  // バトル履歴のアイテムが表示されるまで待つ
+  await page.waitForSelector('[data-testid="battle-history-item"]', { timeout: 10000 });
+  
   const battleHistoryItems = page.locator('[data-testid="battle-history-item"]');
   const itemCount = await battleHistoryItems.count();
-  // brawl stars apiの使用上、25セットのバトル履歴が返ってくる。
+  // brawl stars apiの仕様上、25セットのバトル履歴が返ってくる。
   // そして、ガチバトルの場合は最大３セット分のバトル履歴を1つにまとめて表示する
   // 25 / 3 = 8.33 よって、8個以上のバトル履歴が表示されることを確認する
-  expect(itemCount).toBeGreaterThanOrEqual(8);
+  expect(itemCount).toBeGreaterThanOrEqual(parseInt(count, 10));
   
   // クリーンアップ
   await page.close();
   await browser.close();
 });
+
+Then('使用できるブロウラーが{string}体表示される', async function(count: string) {
+  await page.waitForSelector('[data-testid="brawler-item-count"]', { timeout: 10000 });
+
+  const brawlerCount = await page.locator('[data-testid="brawler-item-count"]').textContent();
+
+  expect(brawlerCount).toBe(count);
+
+  // クリーンアップ
+  await page.close();
+  await browser.close();  
+})

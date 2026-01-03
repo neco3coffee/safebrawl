@@ -1,56 +1,15 @@
-.main {
+.container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 
-.section {
-  width: 100%;
-  max-width: 1200px;
-  padding: 50px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  h3 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 24px;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.5;
-    text-align: center;
-    max-width: 800px;
-    margin-bottom: 40px;
-  }
-
-  button {
-    padding: 12px 24px;
-    font-size: 16px;
-    font-weight: bold;
-    color: white;
-    background-color: #0070f3;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #005bb5;
-    }
-  }
-
-  &:nth-child(odd) {
-    background-color: black;
-    color: white;
-  }
-  &:nth-child(even) {
-    background-color: white;
-    color: black;
-  }
+.battleHistoryItem {
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 5px;
+  width: 80%;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }

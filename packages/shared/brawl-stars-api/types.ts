@@ -46,7 +46,49 @@ export interface StarPower {
   id: number
   name: string
 }
+// Battle Log Types
+export interface BattleLog {
+  items: BattleLogItem[]
+  paging: {
+    cursors: Record<string, unknown>
+  }
+}
 
+export interface BattleLogItem {
+  battleTime: string
+  event: BattleEvent
+  battle: Battle
+}
+
+export interface BattleEvent {
+  id: number
+  mode: string
+  modeId: number
+  map: string
+}
+
+export interface Battle {
+  mode: string
+  type: string
+  result: 'victory' | 'defeat' | 'draw'
+  duration: number
+  trophyChange: number
+  starPlayer: BattlePlayer
+  teams: BattlePlayer[][]
+}
+
+export interface BattlePlayer {
+  tag: string
+  name: string
+  brawler: BattleBrawler
+}
+
+export interface BattleBrawler {
+  id: number
+  name: string
+  power: number
+  trophies: number
+}
 export interface Gadget {
   id: number
   name: string
