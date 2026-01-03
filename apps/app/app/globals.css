@@ -11,11 +11,15 @@
 	margin: 0;
 }
 
-html,
-body
+html
 {
 	height: 100dvh;
 	width: 100dvw;
+}
+
+body {
+	height: 100%;
+	width: 100%;
 }
 
 main {
