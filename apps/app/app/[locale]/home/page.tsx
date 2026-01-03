@@ -1,6 +1,6 @@
+import TagInput from "./_components/client/TagInput";
 import styles from "./page.module.scss";
 import { setRequestLocale, getTranslations } from "next-intl/server";
-import PlayerTagInput from "./PlayerTagInput";
 
 export default async function Page({
   params,
@@ -13,25 +13,8 @@ export default async function Page({
   const t = await getTranslations("home");
 
   return (
-    <main className={styles.main}>
-      <PlayerTagInput />
-      <section className={styles.section}>
-        <h3>{t("playerTagSearchSection.title")}</h3>
-        <p>{t("playerTagSearchSection.description")}</p>
-      </section>
-      <section className={styles.section}>
-        <h3>{t("cheaterTimeHeatmapSection.title")}</h3>
-        <p>{t("cheaterTimeHeatmapSection.description")}</p>
-      </section>
-      <section className={styles.section}>
-        <h3>{t("rankedTopPlayersStatsSection.title")}</h3>
-        <p>{t("rankedTopPlayersStatsSection.description")}</p>
-      </section>
-      <section className={styles.section}>
-        <h3>{t("currentSeasonRankedMapSection.title")}</h3>
-        <p>{t("currentSeasonRankedMapSection.description")}</p>
-      </section>
-    </main>
+    <div className={styles.container}>
+      <TagInput locale={locale} />
+    </div>
   )
-
 } 

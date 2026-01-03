@@ -26,8 +26,10 @@ export default function RootLayout({
 	return (
 		<html>
 			<body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-black text-white`}>
-			<PageList locale="ja" />
-				{children}
+			{/* <PageList locale="ja" /> */}
+				<main>
+					{children}
+				</main>
 			</body>
 		</html>
 	)

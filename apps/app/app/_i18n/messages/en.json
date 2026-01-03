@@ -43,22 +43,6 @@
     }
   },
   "home": {
-    "playerTagSearchSection": {
-      "title": "Tagプレイヤー検索機能",
-      "description": "tagでプレイヤーを検索して、そのプレイヤーの詳細画面へ移動(例: #ABCD1234)"
-    },
-    "cheaterTimeHeatmapSection": {
-      "title": "利敵プレイヤー活動ヒートマップ",
-      "description": "リアルタイムの利敵プレイヤー活動を時間帯別にヒートマップで表示"
-    },
-    "rankedTopPlayersStatsSection": {
-      "title": "トッププレイヤーランキング10の統計情報",
-      "description": "現在のシーズンにおける勝率上位10プレイヤーのCardを一覧表示"
-    },
-    "currentSeasonRankedMapSection": {
-      "title": "現在のシーズンのガチバマップ",
-      "description": "現在のシーズンで実際にプレイされているガチバトルのマップを表示"
-    }
   },
   "playerDetail": {
     "title": "プレイヤー詳細",
