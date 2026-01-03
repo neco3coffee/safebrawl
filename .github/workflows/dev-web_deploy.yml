@@ -16,6 +16,9 @@ jobs:
   deploy-dev:
     runs-on: ubuntu-latest
 
+    env:
+      NEXT_PUBLIC_ENV: dev
+
     steps:
       - uses: actions/checkout@v4
 

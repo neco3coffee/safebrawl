@@ -19,6 +19,7 @@ jobs:
     env:
       API_URL: ${{ secrets.API_URL }}
       PROXY_TARGET_URL: ${{ secrets.PROXY_TARGET_URL }}
+      NEXT_PUBLIC_ENV: dev
 
 
     steps:
