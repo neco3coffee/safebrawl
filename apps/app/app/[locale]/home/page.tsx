@@ -1,5 +1,6 @@
 import styles from "./page.module.scss";
 import { setRequestLocale, getTranslations } from "next-intl/server";
+import PlayerTagInput from "./PlayerTagInput";
 
 export default async function Page({
   params,
@@ -13,6 +14,7 @@ export default async function Page({
 
   return (
     <main className={styles.main}>
+      <PlayerTagInput />
       <section className={styles.section}>
         <h3>{t("playerTagSearchSection.title")}</h3>
         <p>{t("playerTagSearchSection.description")}</p>
