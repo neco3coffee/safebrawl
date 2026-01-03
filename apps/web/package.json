@@ -1,25 +1,28 @@
 {
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3111",
     "build": "next build",
     "start": "serve out",
     "lint": "eslint . --ext .ts,.tsx"
   },
   "dependencies": {
     "@types/node": "^18.11.5",
-    "@types/react-dom": "^18.0.7",
     "@types/react": "^18.0.23",
-    "next": "latest",
-    "react-dom": "^18.2.0",
+    "@types/react-dom": "^18.0.7",
+    "next": "15.5.9",
+    "next-intl": "^4.6.1",
     "react": "^18.2.0",
-    "serve": "^14.2.0",
-    "typescript": "^4.8.4"
+    "react-dom": "^18.2.0",
+    "sass": "^1.97.1",
+    "serve": "^14.2.0"
   },
   "devDependencies": {
-    "wrangler": "^4.56.0",
     "@typescript-eslint/eslint-plugin": "^8.51.0",
     "@typescript-eslint/parser": "^8.51.0",
-    "eslint": "^9.39.2"
+    "eslint": "^9.39.2",
+    "typescript": "^5",
+    "wrangler": "^4.56.0"
   }
 }

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import PageList from "./_components/PageList";
+import PageList from "shared/components/PageList";
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -25,8 +25,8 @@ export default function RootLayout({
 }>) {
 	return (
 		<html>
-			<PageList locale="ja" />
 			<body className={`${geistSans.variable} ${geistMono.variable} font-sans bg-black text-white`}>
+			<PageList locale="ja" />
 				{children}
 			</body>
 		</html>
