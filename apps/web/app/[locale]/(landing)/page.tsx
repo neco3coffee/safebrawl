@@ -14,7 +14,7 @@ export default async function Page({
   return (
     <main className={styles.main}>
       <section className={styles.section}>
-        <span>HeroSection</span>
+        <span>HeroSectio!</span>
         <h3>{t("HeroSection.title")}</h3>
         <p>{t("HeroSection.description")}</p>
       </section>
