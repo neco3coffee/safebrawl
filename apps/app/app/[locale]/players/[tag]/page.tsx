@@ -11,10 +11,14 @@ export default async function Page({
   setRequestLocale(locale);
   
   const t = await getTranslations("playerDetail");
+  console.log("tag:", tag);
 
   const proxyTargetUrl = process.env.PROXY_TARGET_URL
+  console.log("proxyTargetUrl:", proxyTargetUrl);
   const playerInfoResponse = await fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`)
+  console.log("playerInfoResponse.status:", playerInfoResponse.status);
   const playerInfo: Player = await playerInfoResponse.json()
+  console.log("playerInfo:", playerInfo);
   const { name, brawlers } = playerInfo
 
   const playerBattleLogResponse = await fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}/battlelog`);
