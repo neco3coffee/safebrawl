@@ -16,8 +16,12 @@ export default async function Page({
   
   console.time('fetch-parallel');
   const [playerInfoResponse, playerBattleLogResponse] = await Promise.all([
-    fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`),
-    fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}/battlelog`)
+    fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`, {
+      next: { revalidate: 60 }
+    }),
+    fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}/battlelog`, {
+      next: { revalidate: 60 }
+    })
   ]);
   console.timeEnd('fetch-parallel');
 
