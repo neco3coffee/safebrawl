@@ -29,9 +29,9 @@ export default async function Page({
     <div className={styles.container}>
       {name && <h2>{name}</h2>}
       <p data-testid="brawler-item-count">{brawlers && brawlers.length}</p>
-      {battleLogItems && battleLogItems.map((item, index) => (
+      {battleLogItems.map((item, index) => (
         <div key={index} data-testid="battle-history-item" className={styles.battleHistoryItem}>
-          <p>{item.battle.starPlayer.name}</p>
+          <p>{item?.battle?.starPlayer?.name || "Unknown"}</p>
         </div>
       ))} 
       {/* <pre>{JSON.stringify(playerBattleLog, null, 2)}</pre> */}
