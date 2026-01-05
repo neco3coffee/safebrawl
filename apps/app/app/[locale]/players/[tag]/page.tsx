@@ -11,18 +11,22 @@ export default async function Page({
   setRequestLocale(locale);
   
   const t = await getTranslations("playerDetail");
-  console.log("tag:", tag);
 
   const proxyTargetUrl = process.env.PROXY_TARGET_URL
-  console.log("proxyTargetUrl:", proxyTargetUrl);
-  const playerInfoResponse = await fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`)
-  console.log("playerInfoResponse.status:", playerInfoResponse.status);
-  const playerInfo: Player = await playerInfoResponse.json()
-  console.log("playerInfo:", playerInfo);
-  const { name, brawlers } = playerInfo
+  
+  console.time('fetch-parallel');
+  const [playerInfoResponse, playerBattleLogResponse] = await Promise.all([
+    fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`),
+    fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}/battlelog`)
+  ]);
+  console.timeEnd('fetch-parallel');
 
-  const playerBattleLogResponse = await fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}/battlelog`);
-  const playerBattleLog: BattleLog = await playerBattleLogResponse.json();
+  const [playerInfo, playerBattleLog] = await Promise.all([
+    playerInfoResponse.json() as Promise<Player>,
+    playerBattleLogResponse.json() as Promise<BattleLog>
+  ]);
+
+  const { name, brawlers } = playerInfo;
   const { items: battleLogItems } = playerBattleLog;
 
   return (
