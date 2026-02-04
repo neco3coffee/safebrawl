@@ -75,6 +75,57 @@ a {
 }
 
 :root {
+	/* 手動で追加したバリアブル */
+	--black: #181818;
+  --white: #e7e9ea;
+  --black-border: #2f3336;
+  --blue-black: #262626;
+  --placeholder-gray: #9CA3AF;
+  --hover-gray: #374151;
+  --trophy-yellow: #ffc800;
+  --defeat-red: #df0000;
+  --victory-green: #00ff00;
+  --ongoing-orange: #ffa500;
+  --draw-gray: #cccccc;
+  --showdown-green: #83dc3b;
+  --arena-orange: #ff573b;
+  --hotzone-red: #ff2e3b;
+  --report-gray: #343b54;
+  --battlelog-bg-top: #8574a3;
+  --battlelog-bg-middle: #7d6c9b;
+  --battlelog-bg-bottom: #8574a3;
+  --mvp-text: #ffe16f;
+  --mvp-background: #ffa200;
+  --duration-purple: #d0bafa;
+  --same-team-gray: #8d849b;
+  --soloRanked-bg-round: #7e719d;
+  --club-color-c0: #4d4848;
+  --club-color-c1: #e1e1e1;
+  --club-color-c2: #fd8067;
+  --club-color-c3: #9aee2d;
+  --club-color-c4: #2766cf;
+  --club-color-c5: #61def1;
+  --club-color-c6: #f871f8;
+  --club-color-c7: #ffd156;
+  --club-color-c8: #d16eff;
+  --club-color-c9: #fe6a71;
+  --on-blue: #3B82F6;
+  --danger-red: #EF4444;
+  --success-green: #10B981;
+  --bottom-container-bg-blue: #003378;
+  --brawler-normal: #94D7F4;
+  --brawler-rare: #2EDD1B;
+  --brawler-super-rare: #0087FA;
+  --brawler-hyper-rare: #B116EC;
+  --brawler-ultra-rare: #FF0021;
+  --brawler-legendary: #FFF11E;
+  --report-bg-light: #248EF6;
+  --report-bg: #105DE5;
+  --report-bg-dark: #0A4BBE;
+  --cancel-red: #DF362E;
+  --submit-blue: #2373FF;
+
+	/* 自動追加されたバリアブル */
 	--radius: 0.625rem;
 	--background: oklch(1 0 0);
 	--foreground: oklch(0.145 0 0);

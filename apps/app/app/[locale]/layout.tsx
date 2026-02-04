@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../_i18n/routing";
+import Footer from "@/_components/Footer";
 
 type Locale = (typeof routing.locales)[number];
 
@@ -32,7 +33,10 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages}>
-      {children}
+      <main>
+        {children}
+      </main>
+      <Footer locale={locale} />
     </NextIntlClientProvider>
   );
 }

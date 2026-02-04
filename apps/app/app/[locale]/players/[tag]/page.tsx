@@ -8,7 +8,6 @@ export default async function Page({
   params: Promise<{ locale: string, tag: string }>;
 }>) {
   const { locale, tag } = await params;
-  setRequestLocale(locale);
   
   const t = await getTranslations("playerDetail");
 
