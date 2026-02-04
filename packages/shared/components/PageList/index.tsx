@@ -92,7 +92,7 @@ export default function PageList({
   return (
     <div className={styles.container}>
       
-      <a href={`${appURL}/api`} >疎通確認リンク appURL/api</a>
+      <a href={`${appURL}/api`} >疎通確認リンク(^o^)v appURL/api</a>
       <ul className={styles.pageList}>
         {paths.map(({url, path, name, implemented, "cache-duration": cacheDuration}) => (
           <li key={path} className={styles.pageListItem}>
