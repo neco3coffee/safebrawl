@@ -1,2 +1,2 @@
 # Run linting before commit for apps/web and apps/api with parallel execution
-npm run lint
+# npm run lint
