@@ -23,8 +23,11 @@ When('ユーザーが{string}をtagのinputに入力した', async function (tag
   await page.waitForURL(`**/${tag.toUpperCase()}`, { timeout: 10000 });
 });
 
+//　シナリオ: プレイヤーの名前を確認する
 Then('プレイヤー名{string}が表示される', async function (name: string) {
   // プレイヤー名の要素が表示されていることを確認
+  // 名前はエメラルドを使用して変更できるため、テストが失敗する可能性がある。
+  // もしテストが失敗したら、ゲーム内のアカウントで名前を確認して、テストを修正する必要がある。
   await expect(page.locator('h2')).toHaveText(name);
   
   // クリーンアップ
@@ -33,6 +36,7 @@ Then('プレイヤー名{string}が表示される', async function (name: strin
 });
 
 
+// シナリオ: バトル履歴を見る
 Then('バトル履歴が{string}個以上は表示される', async function (count: string) {
   // バトル履歴のアイテムが表示されるまで待つ
   await page.waitForSelector('[data-testid="battle-history-item"]', { timeout: 10000 });
@@ -49,11 +53,16 @@ Then('バトル履歴が{string}個以上は表示される', async function (co
   await browser.close();
 });
 
+// シナリオ: 使えるブロウラーを見る
 Then('使用できるブロウラーが{string}体表示される', async function(count: string) {
   await page.waitForSelector('[data-testid="brawler-item-count"]', { timeout: 10000 });
 
   const brawlerCount = await page.locator('[data-testid="brawler-item-count"]').textContent();
 
+  // テストで使用しているプレイヤーY2YPGCGC(neco3)は頻繁にゲームで使っているアカウントなので、
+  // 新キャラが出てクレジットが溜まれば新しいブロウラーが使用可能になって
+  // ブロウラーの数が増えてテストが失敗する可能性がある。
+  // なので、テストが失敗したらゲームのアカウントのブロウラー数を確認して、テストを修正する必要がある。
   expect(brawlerCount).toBe(count);
 
   // クリーンアップ

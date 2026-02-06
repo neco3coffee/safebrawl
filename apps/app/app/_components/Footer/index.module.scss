@@ -1,6 +1,6 @@
 .footer {
   position: fixed;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   z-index: 1000;
   height: 53px;
@@ -21,7 +21,7 @@
       padding-bottom: 3px;
     }
 
-    .active {
+    .isLinkActive {
       border-bottom: 3px solid var(--white);
     }
   }
