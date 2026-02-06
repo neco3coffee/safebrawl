@@ -21,9 +21,9 @@ export default function TagInput({
   const tagInputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const searchLogList: { tag: string; name: string }[] =
+  const searchedPlayerLogList: { tag: string; name: string }[] =
   typeof window !== "undefined"
-  ? (JSON.parse(localStorage.getItem("searchLogList") || "[]") as {
+  ? (JSON.parse(localStorage.getItem("searchedPlayerLogList") || "[]") as {
     tag: string;
     name: string;
   }[])
@@ -126,7 +126,7 @@ export default function TagInput({
       {isOpen && (
         <div className={styles.dropdownPanel} role="menu">
           <div className={styles.dropdownScroll}>
-            {searchLogList.length === 0 && (
+            {searchedPlayerLogList.length === 0 && (
               <button
                 type="button"
                 className={styles.dropdownMenuItem}
@@ -135,7 +135,7 @@ export default function TagInput({
                 No History
               </button>
             )}
-            {searchLogList.map((item) => (
+            {searchedPlayerLogList.map((item) => (
               <button
                 key={item.tag}
                 type="button"

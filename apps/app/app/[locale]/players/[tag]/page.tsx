@@ -1,6 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import styles from "./page.module.scss";
 import { BattleLog, Player } from "shared/brawl-stars-api/types"
+import SearchedPlayerToLocalStorage from "./_components/SearchedPlayerToLocalStorage";
 
 export default async function Page({
   params,
@@ -33,16 +34,19 @@ export default async function Page({
   const { items: battleLogItems } = playerBattleLog;
 
   return (
-    <div className={styles.container}>
-      {name && <h2>{name}</h2>}
-      <p data-testid="brawler-item-count">{brawlers && brawlers.length}</p>
-      {battleLogItems.map((item, index) => (
-        <div key={index} data-testid="battle-history-item" className={styles.battleHistoryItem}>
-          <p>{item?.battle?.starPlayer?.name || "Unknown"}</p>
-        </div>
-      ))} 
-      {/* <pre>{JSON.stringify(playerBattleLog, null, 2)}</pre> */}
-    </div>
+    <>
+      <SearchedPlayerToLocalStorage playerTag={tag} playerName={name} />
+      <div className={styles.container}>
+        {name && <h2>{name}</h2>}
+        <p data-testid="brawler-item-count">{brawlers && brawlers.length}</p>
+        {battleLogItems.map((item, index) => (
+          <div key={index} data-testid="battle-history-item" className={styles.battleHistoryItem}>
+            <p>{item?.battle?.starPlayer?.name || "Unknown"}</p>
+          </div>
+        ))} 
+        {/* <pre>{JSON.stringify(playerBattleLog, null, 2)}</pre> */}
+      </div>
+    </>
   )
   
 }
