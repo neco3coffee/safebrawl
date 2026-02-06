@@ -26,6 +26,8 @@ When('ユーザーが{string}をtagのinputに入力した', async function (tag
 //　シナリオ: プレイヤーの名前を確認する
 Then('プレイヤー名{string}が表示される', async function (name: string) {
   // プレイヤー名の要素が表示されていることを確認
+  // 名前はエメラルドを使用して変更できるため、テストが失敗する可能性がある。
+  // もしテストが失敗したら、ゲーム内のアカウントで名前を確認して、テストを修正する必要がある。
   await expect(page.locator('h2')).toHaveText(name);
   
   // クリーンアップ
