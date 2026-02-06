@@ -14,7 +14,6 @@ export default function SearchedPlayerToLocalStorage({
   playerTag: string;
   playerName: string;
 }) {
-  console.log("SearchedPlayerToLocalStorage rendered");
   // tagを整形
   const tag = playerTag.startsWith("#") ? playerTag.substring(1) : playerTag;
 
