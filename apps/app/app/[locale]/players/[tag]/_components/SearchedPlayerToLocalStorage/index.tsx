@@ -24,6 +24,8 @@ export default function SearchedPlayerToLocalStorage({
   const addPlayerTagAndNameToLocalStorage = (tag: string, name: string) => {
     // windowがundefinedではない = クライアントサイド(ブラウザ)で動作してる場合のみ実行
     if (typeof window !== "undefined") {
+      if (!tag || !name) return;
+
       // 検索済みのログリストを取得
       const searchedPlayerLogList: SearchedPlayerLog[] = JSON.parse(localStorage.getItem("searchedPlayerLogList") || "[]");
       

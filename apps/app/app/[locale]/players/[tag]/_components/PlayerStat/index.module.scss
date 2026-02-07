@@ -1,0 +1,26 @@
+.container {
+  width: 138px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  h5 {
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .statContainer {
+    background-color: var(--blue-black);
+    height: 32px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 12px;
+
+    p {
+      margin-left: 12px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+  }
+}
