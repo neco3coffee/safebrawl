@@ -70,6 +70,18 @@
     "brawler": "キャラクター",
     "powerLevelSorted": "パワーレベル順"
   },
+  "clubDetail": {
+    "clubTag": "クラブタグ",
+    "clubType": "タイプ",
+    "clubRequiredTrophy": "必要トロフィー数",
+    "open": "参加自由",
+    "closed": "非公開",
+    "inviteOnly": "承認制",
+    "member": "メンバー",
+    "senior": "シニア",
+    "vicePresident": "サブリーダー",
+    "president": "リーダー"
+  },
   "mapDetail": {
     "title": "マップ詳細",
     "mapInfoSection": {

@@ -1,0 +1,60 @@
+
+.memberCardContainer {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--battlelog-bg-bottom);
+  border: 1px solid var(--black-border);
+
+  /* タップ時に縮むアニメーション */
+  transition: transform 140ms cubic-bezier(.2,.8,.2,1);
+  transform-origin: center;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: scale(0.96);
+  }
+  &:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.12);
+    outline-offset: 2px;
+  }
+
+  .iconAndNameContainer {
+    display: flex;
+
+    .nameAndRoleContainer {
+      margin-left: 4px;
+      h3 {
+        font-size: 14px;
+        font-weight: bold;
+        text-shadow: 1px 1px 2px var(--black);
+      }
+
+      h5 {
+        font-size: 10px;
+        color: var(--blue-black);
+      }
+    }
+  }
+
+  .trophyContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+
+    .trophyImg {
+      width: 13px;
+      height: 13px;
+      margin-right: 4px;
+    }
+
+    .clubTrophy {
+      font-size: 14px;
+      font-weight: 400;
+      padding-bottom: 2px;
+    }
+  }
+}

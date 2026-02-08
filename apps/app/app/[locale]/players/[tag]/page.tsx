@@ -46,7 +46,7 @@ export default async function Page({
 
   if (playerInfo.club.tag) {
     const clubInfoResponse = await fetch(`${proxyTargetUrl}/v1/clubs/${encodeURIComponent(playerInfo.club.tag)}`, {
-      next: { revalidate: 60 }
+      next: { revalidate: 3600 }
     })
     clubInfo = await clubInfoResponse.json();
     matchedPlayer = clubInfo?.members.find(member => member.tag === playerInfo.tag);
@@ -146,7 +146,10 @@ export default async function Page({
 
         {/* クラブバッチ   クラブ名  */}
         {/*              ロール */}
-        <div className={styles.playerClubContainer}>
+        <Link 
+          href={clubInfo?.tag ? `/${locale}/clubs/${clubInfo.tag.substring(1)}` : `#`}
+          className={styles.playerClubContainer}
+        >
           {
             clubInfo && clubInfo.badgeId ? (
               <Image
@@ -167,7 +170,7 @@ export default async function Page({
               notInClubText={t("notInClub")}
             />
           </div>
-        </div>
+        </Link>
 
         {/* バトル履歴 */}
       </div>

@@ -6,10 +6,11 @@ type PlayerNameProps = {
 }
 
 // normalizeColor(0xffff8afb) => #ff8afb
-const normalizeColor = (nameColor?: string | null) => {
-  if (!nameColor) return undefined;
+export const normalizeColor = (nameColor?: string | null) => {
+  const defaultColor = "#fff"
+  if (!nameColor) return defaultColor;
   const normalized = nameColor.toString().replace(/^0x/i, "");
-  if (normalized.length < 6) return undefined;
+  if (normalized.length < 6) return defaultColor;
   return `#${normalized.slice(-6)}`
 }
 
@@ -22,10 +23,9 @@ export default function PlayerName({
   return (
     <h2 
       className={styles.playerName}
-      style={nameColorCode ? { color: nameColorCode} : undefined}
+      style={{color: nameColorCode}}
     >
       {name}
     </h2>
   )
-
 }
