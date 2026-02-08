@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import styles from "./page.module.scss";
-import { BattleLog, Player, Club, Member } from "shared/brawl-stars-api/types"
+import { BattleLog, Player, Club, Member, Brawlers } from "shared/brawl-stars-api/types"
 import SearchedPlayerToLocalStorage from "./_components/SearchedPlayerToLocalStorage";
 import Link from "next/link";
 import PlayerName from "./_components/PlayerName";
@@ -22,18 +22,22 @@ export default async function Page({
   // プレイヤー情報とバトルログをネットワーク経由で並列取得
   // 並列で取得することで待ち時間を最小化
   console.time('fetch-parallel');
-  const [playerInfoResponse, playerBattleLogResponse] = await Promise.all([
+  const [playerInfoResponse, playerBattleLogResponse, brawlersResponse] = await Promise.all([
     fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`, {
       next: { revalidate: 60 }
     }),
     fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}/battlelog`, {
       next: { revalidate: 60 }
+    }),
+    fetch(`${proxyTargetUrl}/v1/brawlers`, {
+      next: { revalidate: 86400 }
     })
   ]);
   console.timeEnd('fetch-parallel');
 
   const playerInfo = await playerInfoResponse.json() as Player;
   const playerBattleLog = await playerBattleLogResponse.json() as BattleLog;
+  const { items: allBrawlers} = await brawlersResponse.json() as Brawlers;
 
   // playerInfo -> clubInfoの順に依存関係があるため、直列で取得
   // このブロックのみで使用するためletを使用
@@ -93,7 +97,7 @@ export default async function Page({
             href={`/${locale}/players/${encodeURIComponent(tag)}/brawlers`}
             className={styles.brawlersLink}
           >
-            {t("brawlers")} ({playerInfo.brawlers.length}/99)
+            {t("brawlers")} ({playerInfo.brawlers.length}/{allBrawlers.length})
           </Link>
         </div>
 

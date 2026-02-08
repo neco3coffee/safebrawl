@@ -22,6 +22,13 @@ export interface Player {
   brawlers: Array<Brawler>
 }
 
+export interface Brawlers {
+  items: Brawler[]
+  paging: {
+    cursors: any
+  }
+}
+
 export interface Brawler {
   id: number
   name: string

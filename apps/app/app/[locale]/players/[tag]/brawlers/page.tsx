@@ -1,10 +1,8 @@
 import Link from "next/link";
-import { Player } from "shared/brawl-stars-api/types";
+import { Brawler, Player, Brawlers } from "shared/brawl-stars-api/types";
 import styles from "./page.module.scss"
 import { getTranslations } from "next-intl/server";
 import BrawlerCard from "./_components/BrawlerCard";
-
-
 
 export default async function Page({
   params,
@@ -17,10 +15,16 @@ export default async function Page({
 
   const proxyTargetUrl = process.env.PROXY_TARGET_URL
 
-  const PlayerInfoResponse = await fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`, {
-    next: { revalidate: 60 }
-  });
-  const playerInfo = await PlayerInfoResponse.json() as Player;
+  const [playerInfoResponse, brawlersResponse] = await Promise.all([
+    fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`, {
+      next: { revalidate: 60 }
+    }),
+    fetch(`${proxyTargetUrl}/v1/brawlers`, {
+      next: { revalidate: 86400 }
+    })
+  ]);
+  const playerInfo = await playerInfoResponse.json() as Player;
+  const { items: allBrawlers} = await brawlersResponse.json() as Brawlers;
 
   if (!playerInfo || !playerInfo?.tag) {
     return (
@@ -45,7 +49,7 @@ export default async function Page({
       {/* <pre style={{ maxWidth: "100%", overflow: "auto" }}>{JSON.stringify(sortedBrawlers, null, 2)}</pre> */}
       <div className={styles.container}>
         <div className={styles.brawlersHeader}>
-          {t("brawler")}{brawlers.length}/99 <span>({t("powerLevelSorted")})</span>
+          {t("brawler")}{brawlers.length}/{allBrawlers.length} <span>({t("powerLevelSorted")})</span>
         </div>
 
         {sortedBrawlers.map((brawler) => {
