@@ -73,6 +73,7 @@ export default async function Page({
             </div>
           </div>
         </div>
+        <h4 className={styles.clubMemberCount}>{t("member")} {clubInfo.members.length}/30</h4>
 
         {/* クラブメンバー情報 */}
         <div className={styles.clubMembersContainer}>
