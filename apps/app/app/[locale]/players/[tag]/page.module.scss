@@ -8,7 +8,7 @@
 }
 
 .container {
-  padding: 23px;
+  padding: 0px 23px;
   width: 100%;
   max-width: 836px;
   min-height: 100%;
@@ -21,6 +21,47 @@
 
   @media (min-width: 768px) {
     padding: 36px;
+  }
+
+  .profileHeaderContainer {
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 24px;
+
+    .profileHeaderTitle {
+      align-self: flex-end;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .brawlersLink {
+      align-self: flex-start;
+      font-size: 16px;
+      font-weight: normal;
+      letter-spacing: -1px;
+      background-color: var(--black-border);
+      height: 40px;
+      padding: 3px 12px;
+      clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
+      border-top: 1.5px solid var(--placeholder-gray);
+      border-bottom: 1.5px solid var(--black);
+
+      /* タップ時に縮むアニメーション */
+      transition: transform 140ms cubic-bezier(.2,.8,.2,1);
+      transform-origin: center;
+      will-change: transform;
+      -webkit-tap-highlight-color: transparent;
+
+      &:active {
+        transform: scale(0.96);
+      }
+      &:focus-visible {
+        outline: 2px solid rgba(255,255,255,0.12);
+        outline-offset: 2px;
+      }
+    }
   }
 
   .playerInfoContainer {
@@ -76,6 +117,7 @@
     }
 
     .clubNameContainer {
+      z-index: -1;
       width: 187px;
       height: 36px;
       background-color: #989898;
@@ -85,6 +127,9 @@
       font-size: 12px;
       font-weight: bold;
       color: var(--white);
+      clip-path: polygon(2% 0, 100% 0, 98% 100%, 0% 100%);
+      border-top: 1.5px solid var(--white);
+      border-bottom: 1.5px solid var(--black);
     }
   }
 }

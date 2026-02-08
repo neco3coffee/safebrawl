@@ -86,6 +86,17 @@ export default async function Page({
       {/* <pre>{JSON.stringify(playerBattleLog, null, 2)}</pre> */}
       <div className={styles.container}>
 
+        {/* プロフィール　　キャラクター(98/99) */}
+        <div className={styles.profileHeaderContainer}>
+          <h4 className={styles.profileHeaderTitle}>{t("profile")}</h4>
+          <Link
+            href={`/${locale}/players/${encodeURIComponent(tag)}/brawlers`}
+            className={styles.brawlersLink}
+          >
+            {t("brawlers")} ({playerInfo.brawlers.length}/99)
+          </Link>
+        </div>
+
         {/* アイコン  名前 */}
         {/*  タグ         */}
         <div className={styles.playerInfoContainer}>
@@ -153,6 +164,8 @@ export default async function Page({
             />
           </div>
         </div>
+
+        {/* バトル履歴 */}
       </div>
     </>
   )

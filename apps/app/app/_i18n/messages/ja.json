@@ -54,6 +54,8 @@
       "title": "バトル履歴",
       "description": "直近のバトル履歴25件を一覧表示。各バトルの詳細情報(モード、マップ、使用キャラ、勝敗、MVP)も確認可能"
     },
+    "profile": "プロフィール",
+    "brawlers": "キャラクター",
     "playerNotFound": "のプレイヤーが見つかりませんでした。",
     "goBackToHome": "ホームに戻る",
     "seasonHigh": "シーズン記録",
@@ -64,7 +66,9 @@
     "member": "メンバー",
     "senior": "シニア",
     "vicePresident": "サブリーダー",
-    "president": "リーダー"
+    "president": "リーダー",
+    "brawler": "キャラクター",
+    "powerLevelSorted": "パワーレベル順"
   },
   "mapDetail": {
     "title": "マップ詳細",
