@@ -33,6 +33,17 @@ const nextConfig: NextConfig = {
 				]
 			}
 		]
+	},
+
+	images: {
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'cdn.brawlify.com',
+				port: '',
+				pathname: '/**'
+			}
+		]
 	}
 };
 

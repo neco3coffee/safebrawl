@@ -15,11 +15,18 @@ export interface Player {
   duoVictories: number
   bestRoboRumbleTime: number
   bestTimeAsBigBrawler: number
-  clug: {
+  club: {
     tag: string
     name: string
   }
   brawlers: Array<Brawler>
+}
+
+export interface Brawlers {
+  items: Brawler[]
+  paging: {
+    cursors: any
+  }
 }
 
 export interface Brawler {
@@ -46,6 +53,31 @@ export interface StarPower {
   id: number
   name: string
 }
+
+// Club Types
+export interface Club {
+  tag: string
+  name: string
+  description: string
+  type: string
+  badgeId: number
+  requiredTrophies: number
+  trophies: number
+  members: Member[]
+}
+
+export interface Member {
+  tag: string
+  name: string
+  nameColor: string
+  role: string
+  trophies: number
+  icon: {
+    id: number
+  }
+}
+
+
 // Battle Log Types
 export interface BattleLog {
   items: BattleLogItem[]
