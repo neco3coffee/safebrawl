@@ -1,0 +1,169 @@
+.container {
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 8px;
+
+  @media (min-width: 768px) {
+      margin-bottom: 17px;
+    }
+}
+
+.topContainer {
+  width: 100%;
+  height: 12px;
+  background-color: var(--battlelog-bg-top);
+  font-size: 8px;
+  color: var(--white);
+  font-weight: bold;
+  padding: 0 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+      height: 17px;
+      font-size: 10px;
+    }
+
+  .left {
+    width: 40%;
+  }
+  h5 {
+    font-size: 8px;
+    font-weight: bold;
+    color: var(--white);
+  }
+  .right {
+    width: 40%;
+    text-align: right;
+    color: var(--white);
+    font-size: 8px;
+    font-weight: bold;
+  }
+}
+
+.middleContainer {
+  width: 100%;
+  height: 24px;
+  background-color: var(--battlelog-bg-middle);
+  padding: 0 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+      height: 32px;
+    }
+
+  .left {
+    display: flex;
+    width: 40%;
+
+    img {
+        max-height: 30px;
+        width: auto;
+
+        @media (min-width: 768px) {
+          max-height: 40px;
+        }
+      }
+
+    .modeAndMapContainer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-left: 5px;
+      padding: 2px 0;
+
+      h5 {
+        font-size: 10px;
+        font-weight: bold;
+        color: var(--white);
+
+        @media (min-width: 768px) {
+            font-size: 13px;
+          }
+      }
+      h6 {
+        font-size: 8px;
+        font-weight: bold;
+        color: var(--white);
+
+        @media (min-width: 768px) {
+            font-size: 11px;
+          }
+      }
+    }
+  }
+
+  .victory {
+    color: var(--victory-green);
+    font-size: 12px;
+    font-weight: bold;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+      }
+  }
+  .defeat {
+    color: var(--defeat-red);
+    font-size: 12px;
+    font-weight: bold;
+
+    @media (min-width: 768px) {
+        font-size: 16px;
+      }
+  }
+
+  .right {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: var(--trophy-yellow);
+    font-size: 11px;
+    font-weight: bold;
+
+    img {
+        width: 15px;
+        height: 15px;
+        transform: rotate(7deg);
+
+        @media (min-width: 768px) {
+          width: 19px;
+          height: 19px;
+        }
+      }
+      @media (min-width: 768px) {
+        font-size: 14px;
+      }
+  }
+}
+
+
+.bottomContainer {
+  width: 100%;
+  background-color: var(--battlelog-bg-bottom);
+  padding: 4px 4px 0px 4px;
+
+  .bottomContainerInner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .teamContainer {
+      width: 47%;
+      height: 66px;
+      background-color: var(--same-team-gray);
+      padding: 6px 7px 6px 7px;
+      display: flex;
+      margin-bottom: 8px;
+
+      @media (min-width: 768px) {
+          height: 85px;
+        }
+    }
+  }
+}

@@ -53,7 +53,34 @@
     "playerBattleHistorySection": {
       "title": "バトル履歴",
       "description": "直近のバトル履歴25件を一覧表示。各バトルの詳細情報(モード、マップ、使用キャラ、勝敗、MVP)も確認可能"
-    }
+    },
+    "profile": "プロフィール",
+    "brawlers": "キャラクター",
+    "playerNotFound": "のプレイヤーが見つかりませんでした。",
+    "goBackToHome": "ホームに戻る",
+    "seasonHigh": "シーズン記録",
+    "allTimeHigh": "歴代記録",
+    "3vs3Victories": "3対3 勝利数",
+    "victories": "勝利数",
+    "notInClub": "クラブに参加していません",
+    "member": "メンバー",
+    "senior": "シニア",
+    "vicePresident": "サブリーダー",
+    "president": "リーダー",
+    "brawler": "キャラクター",
+    "powerLevelSorted": "パワーレベル順"
+  },
+  "clubDetail": {
+    "clubTag": "クラブタグ",
+    "clubType": "タイプ",
+    "clubRequiredTrophy": "必要トロフィー数",
+    "open": "参加自由",
+    "closed": "非公開",
+    "inviteOnly": "承認制",
+    "member": "メンバー",
+    "senior": "シニア",
+    "vicePresident": "サブリーダー",
+    "president": "リーダー"
   },
   "mapDetail": {
     "title": "マップ詳細",

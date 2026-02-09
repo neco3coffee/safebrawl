@@ -125,6 +125,16 @@ a {
   --cancel-red: #DF362E;
   --submit-blue: #2373FF;
 
+	--outline: 2px;
+	--stroke: #0b0b0b;
+	--red1:#ff4a3d;
+	--red2:#ff6a3a;
+	--red3:#ff2f2f;
+	--inner1:#ffe36b;
+	--inner2:#ffc24a;
+
+	--power-bg: #FE00D6;
+
 	/* 自動追加されたバリアブル */
 	--radius: 0.625rem;
 	--background: oklch(1 0 0);
