@@ -15,8 +15,7 @@ export const formatBattleLog = (battleLogs: BattleLogItem[]) => {
           .map((player: BattlePlayer) => player.tag)
           .sort()
           .join("-");
-        const currentBattleLogId = battleLog.battle.teams
-          .flat()
+        const currentBattleLogId = battleLog.battle.teams?.flat()
           .map((player: BattlePlayer) => player.tag)
           .sort()
           .join("-");
