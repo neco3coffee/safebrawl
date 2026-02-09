@@ -290,6 +290,7 @@ export default async function Page({
                       key={battleLog?.battleTime}
                       battleLog={battleLog}
                       ownTag={tag}
+                      locale={locale}
                     />
                   );
                 } else {
