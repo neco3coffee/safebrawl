@@ -1,7 +1,7 @@
 import { Brawler } from "shared/brawl-stars-api/types"
 import styles from "./index.module.scss"
 import Image from "next/image"
-import { brawlerBgColor } from "../../brawlerRarity"
+import { brawlerBgColor } from "../../../../../../_libs/brawlerRarity"
 
 export default function BrawlerCard({
   brawler,

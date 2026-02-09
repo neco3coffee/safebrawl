@@ -1,0 +1,87 @@
+
+.playerContainer {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: -0.3px;
+
+  @media (min-width: 768px) {
+    width: 64px;
+    font-size: 10px;
+  }
+
+  .mvpContainer {
+    width: 100%;
+    height: 11px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--mvp-text);
+    text-shadow: 0px 0.5px 0px var(--black);
+    background-color: var(--mvp-background);
+    font-size: 6px;
+    font-weight: bold;
+  }
+
+  .brawlerContainer {
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--black);
+    position: relative;
+
+    @media (min-width: 768px) {
+      width: 56px;
+      height: 56px;
+    }
+
+    .trophiesContainer {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      height: 8px;
+      padding:0 2px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background-color: var(--black);
+      font-size: 8px;
+      color: var(--trophy-yellow);
+    }
+
+    .rank {
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      height: 20px;
+    }
+
+    .levelContainer {
+      position: absolute;
+      bottom: -2px;
+      right: -2px;
+      height: 8px;
+      padding: 0 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: var(--black);
+
+      strong {
+        font-size: 4px;
+        color: gray;
+        margin-right: 2px;
+      }
+
+      h6 {
+        font-size: 8px;
+        color: var(--white);
+      }
+    }
+  }
+}

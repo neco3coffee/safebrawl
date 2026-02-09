@@ -68,7 +68,8 @@
     "vicePresident": "サブリーダー",
     "president": "リーダー",
     "brawler": "キャラクター",
-    "powerLevelSorted": "パワーレベル順"
+    "powerLevelSorted": "パワーレベル順",
+    "battleLog": "バトル履歴"
   },
   "clubDetail": {
     "clubTag": "クラブタグ",
