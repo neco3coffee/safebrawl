@@ -15,10 +15,10 @@ const BattleLog5vs5 = ({ battleLog, ownTag, locale }: {
   locale: string
 }) => {
   const tag = ownTag.trim().toUpperCase().replace(/O/g, "0");
-  const ownTeam = battleLog?.battle?.teams.find((team: BattlePlayer[]) => {
+  const ownTeam = battleLog?.battle?.teams?.find((team: BattlePlayer[]) => {
     return team.some((player: BattlePlayer) => player.tag === `#${tag}`);
   });
-  const enemyTeam = battleLog?.battle?.teams.find((team: BattlePlayer[]) => {
+  const enemyTeam = battleLog?.battle?.teams?.find((team: BattlePlayer[]) => {
     return team.every((player: BattlePlayer) => player.tag !== `#${tag}`);
   });
   const starPlayerTag = battleLog?.battle?.starPlayer?.tag;
