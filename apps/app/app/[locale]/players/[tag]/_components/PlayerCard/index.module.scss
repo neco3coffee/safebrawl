@@ -10,6 +10,20 @@
   font-weight: bold;
   letter-spacing: -0.3px;
 
+  /* タップ時に縮むアニメーション */
+  transition: transform 140ms cubic-bezier(.2,.8,.2,1);
+  transform-origin: center;
+  will-change: transform;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: scale(0.96);
+  }
+  &:focus-visible {
+    outline: 2px solid rgba(255,255,255,0.12);
+    outline-offset: 2px;
+  }
+
   @media (min-width: 768px) {
     width: 64px;
     font-size: 10px;
