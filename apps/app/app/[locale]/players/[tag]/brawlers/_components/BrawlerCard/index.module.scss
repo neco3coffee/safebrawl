@@ -98,8 +98,11 @@
 
   .bottomContainer {
     width: 100%;
-    aspect-ratio: 230 / 41;
-    // background-color:beige;
+    aspect-ratio: 230 / 51;
+    background-color: var(--black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
   }
 }
 

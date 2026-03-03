@@ -3,6 +3,9 @@ import styles from "./index.module.scss"
 import Image from "next/image"
 import { brawlerBgColor } from "../../../../../../_libs/brawlerRarity"
 import PowerBadge from "../PowerBadge"
+import GadgetBadge from "../GadgetBadge"
+import StarPowerBadge from "../StarPowerBadge"
+import GearsBadge from "../GearsBadge"
 
 export default function BrawlerCard({
   brawler,
@@ -38,6 +41,7 @@ export default function BrawlerCard({
           )
         }
       </div>
+
       <div className={styles.middleContainer} style={{ backgroundColor: brawlerBgColor(brawler.name)}}>
         <Image
           src={`https://cdn.brawlify.com/brawlers/portraits/${brawler.id}.png`}
@@ -56,10 +60,25 @@ export default function BrawlerCard({
         </h4>
       </div>
 
-      {/* TODO: brawlerのギア・スタパ・ガジェットをどこかで見れるようにする */}
-      {/* <div className={styles.bottomContainer}>
+      <div className={styles.bottomContainer}>
+        {/* gadget */}
+        <GadgetBadge
+          gadgets={brawler.gadgets}
+          buffies={brawler.buffies}
+        />
 
-      </div> */}
+        {/* star power */}
+        <StarPowerBadge
+          starPowers={brawler.starPowers}
+          buffies={brawler.buffies}
+        />
+
+        {/* gears */}
+        <GearsBadge
+          gears={brawler.gears}
+        />
+        
+      </div>
     </div>
   )
 }

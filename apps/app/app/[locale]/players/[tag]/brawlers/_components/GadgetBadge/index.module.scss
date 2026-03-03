@@ -1,0 +1,18 @@
+.gadgetContainer {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .gadgets {
+    color: var(--gadget-light-green);
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 100;
+    padding-left: 0.5px;
+    padding-right: 0.5px;
+    padding-bottom: 3.5px;
+  }
+}

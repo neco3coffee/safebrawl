@@ -1,0 +1,17 @@
+.gearsBadgeContainer {
+  width: 35px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .gears {
+    padding-right: 5px;
+    padding-bottom: 1px;
+    color: var(--gears-light-blue);
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 100;
+  }
+}
