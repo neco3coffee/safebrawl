@@ -116,6 +116,7 @@ export default async function Page({
               width={80}
               height={80}
               sizes={"80px"}
+              unoptimized
               />
             <h3 className={styles.playerTag}>{playerInfo.tag}</h3>
           </div>
@@ -163,6 +164,7 @@ export default async function Page({
               width={32}
               height={36}
               sizes="32px"
+              unoptimized
               />
             ) : (
               <></>

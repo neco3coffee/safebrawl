@@ -51,6 +51,7 @@ const BattleLogDuel = ({ battleLog, ownTag, locale }: {
             width={30}
             height={30}
             sizes="30px"
+            unoptimized
           />
           <div className={styles.modeAndMapContainer}>
             {/* TODO:DADGEBALLじゃなくてDOGDEBRAWLって表示できるようにする */}
@@ -88,6 +89,7 @@ const BattleLogDuel = ({ battleLog, ownTag, locale }: {
                 width={15}
                 height={15}
                 sizes="15px"
+                unoptimized
               />
             </>
           ) : (

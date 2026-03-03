@@ -35,6 +35,7 @@ export default async function Page({
           width={50}
           height={50}
           sizes="50px"
+          unoptimized
         />
         <h2 className={styles.clubName}>{clubInfo.name}</h2>
         <div className={styles.trophyContainer}>
@@ -45,6 +46,7 @@ export default async function Page({
             height={12}
             sizes={"16px"}
             className={styles.trophyImg}
+            unoptimized
           />
           <h3 className={styles.clubTrophy}>{clubInfo.trophies}</h3>
         </div>
@@ -68,6 +70,7 @@ export default async function Page({
                 height={12}
                 sizes={"16px"}
                 className={styles.trophyImg}
+                unoptimized
               />
               <h5 className={styles.clubInfoItemValue}>{clubInfo.requiredTrophies}</h5>
             </div>
