@@ -20,6 +20,7 @@ export default function GearsBadge({
           alt="gears badge"
           fill={true}
           sizes="30px"
+          unoptimized
         />
         <span className={styles.gears}>
           {gears.length}

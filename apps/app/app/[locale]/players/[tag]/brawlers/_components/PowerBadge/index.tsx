@@ -24,6 +24,7 @@ export default function PowerBadge({
             alt="buffies hypercharge power badge icon"
             fill={true}
             sizes="30px"
+            unoptimized
           />
           <span className={styles.buffiesPower}>
             {power}
@@ -48,6 +49,7 @@ export default function PowerBadge({
             alt="hypercharge power badge icon"
             fill={true}
             sizes="30px"
+            unoptimized
           />
           <span className={styles.hyperChargePower}>
             {power}
@@ -66,6 +68,7 @@ export default function PowerBadge({
           alt="power badge icon"
           fill={true}
           sizes="30px"
+          unoptimized
         />
         <span 
           className={styles.powerBadgePower}
