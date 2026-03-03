@@ -36,11 +36,31 @@ export interface Brawler {
   rank: number
   trophies: number
   highestTrophies: number
+  prestigeLevel: number
+  currentWinStreak: number
   maxWinStreak: number
+  skin: Skin
+  gadgets: Gadget[] | []
   gears: Gear[] | []
   starPowers: StarPower[] | []
-  gadgets: Gadget[] | []
-  currentWinStreak: number
+  hyperCharges: HyperCharge[] | []
+  buffies: Buffies
+}
+
+export interface Buffies {
+  gadget: boolean
+  starPower: boolean
+  hyperCharge: boolean
+}
+
+export interface HyperCharge {
+  id: number
+  name: string
+}
+
+export interface Skin {
+  id: number
+  name: string
 }
 
 export interface Gear {

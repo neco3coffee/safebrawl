@@ -1,0 +1,93 @@
+
+// hyperChargeがある且つ、buffiesのhyperChargeがある場合
+.buffiesPowerBadgeContainer {
+  position: absolute;
+  width: 30px;
+  height: 38px;
+  bottom: 0px;
+  left: -4px;
+
+  .buffiesPowerBadgeBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .buffiesPower {
+      padding-top: 10px;
+      padding-right: 1.5px;
+      z-index: 100;
+      font-size: 13px;
+      font-weight: bold;
+      text-shadow: 
+        0.5px -0.5px 0 var(--black),
+        0.5px 0.5px 0 var(--black),
+        -0.5px 0.5px 0 var(--black),
+        -0.5px -0.5px 0 var(--black);
+    }
+  }
+}
+
+
+// hyperChargeがある且つ、buffiesのhyperChargeがない場合
+.hyperChargePowerBadgeContainer {
+  position: absolute;
+  width: 30px;
+  height: 38px;
+  bottom: 0px;
+  left: -4px;
+
+  .hyperChargePowerBadgeBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .hyperChargePower {
+      padding-top: 7px;
+      padding-right: 0.9px;
+      z-index: 100;
+      font-size: 13px;
+      font-weight: bold;
+      text-shadow: 
+        0.5px -0.5px 0 var(--black),
+        0.5px 0.5px 0 var(--black),
+        -0.5px 0.5px 0 var(--black),
+        -0.5px -0.5px 0 var(--black);
+    }
+  }
+}
+
+
+// hyperChargeがない場合
+.powerBadgeContainer {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  bottom: 0px;
+  left: -4px;
+  
+  .powerBadgeBox {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .powerBadgePower {
+      z-index: 100;
+      font-size: 13px;
+      font-weight: bold;
+      text-shadow: 
+        0.5px -0.5px 0 var(--black),
+        0.5px 0.5px 0 var(--black),
+        -0.5px 0.5px 0 var(--black),
+        -0.5px -0.5px 0 var(--black);
+    }
+  }
+}

@@ -1,0 +1,17 @@
+.starPowerContainer {
+  width: 30px;
+  height: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .starPowers {
+    padding-right: 1px;
+    padding-bottom: 3px;
+    color: var(--star-power-light-yellow);
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 100;
+  }
+}
