@@ -21,6 +21,7 @@ export default function GadgetBadge({
           alt="buffies gadget badge"
           fill={true}
           sizes="30px"
+          unoptimized
         />
         <span className={styles.gadgets}>
           {gadgets.length}
@@ -38,6 +39,7 @@ export default function GadgetBadge({
           alt="buffies gadget badge"
           fill={true}
           sizes="30px"
+          unoptimized
         />
         <span className={styles.gadgets}>
           {gadgets.length}

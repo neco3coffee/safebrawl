@@ -22,6 +22,7 @@ export default function StarPowerBadge({
           alt="buffies star power badge"
           fill={true}
           sizes="30px"
+          unoptimized
         />
         <span className={styles.starPowers}>
           {starPowers.length}
@@ -40,6 +41,7 @@ export default function StarPowerBadge({
           alt="buffies star power badge"
           fill={true}
           sizes="30px"
+          unoptimized
         />
         <span className={styles.starPowers}>
           {starPowers.length}
