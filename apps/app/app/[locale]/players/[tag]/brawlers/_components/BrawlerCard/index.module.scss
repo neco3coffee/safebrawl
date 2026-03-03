@@ -98,6 +98,21 @@
       color: var(--white);
       font-weight: bold;
     }
+
+    .brawlerName {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      z-index: 10000;
+      font-size: 11px;
+      color: var(--white);
+      font-weight: bold;
+      text-shadow: 
+        1px -1px 1px var(--black), //文字の右上の影
+        1px  1px 1px var(--black), //文字の右下の影
+        -1px 1px 1px var(--black), //文字の左下の影
+        -1px -1px 1px var(--black); //文字の左上の影
+    }
   }
 
   .bottomContainer {
