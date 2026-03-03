@@ -29,6 +29,7 @@ export default function BrawlerCard({
             width={18}
             height={18}
             sizes={"18px"}
+            unoptimized
           />
           <p>{brawler.trophies}</p>
         </div>
@@ -47,6 +48,7 @@ export default function BrawlerCard({
           src={`https://cdn.brawlify.com/brawlers/portraits/${brawler.id}.png`}
           alt={brawler.name}
           fill
+          unoptimized
         />
 
         <PowerBadge

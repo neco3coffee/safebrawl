@@ -48,6 +48,7 @@ export default function PlayerCard({
           }
           fill={true}
           sizes="42px"
+          unoptimized
         />
         {battleType === "ranked" && (
           <div className={styles.trophiesContainer}>
@@ -58,6 +59,7 @@ export default function PlayerCard({
               height={8}
               sizes="8px"
               style={{ transform: `rotate(7deg)` }}
+              unoptimized
             />
             {player?.brawler?.trophies}
           </div>
@@ -71,6 +73,7 @@ export default function PlayerCard({
               width={20}
               sizes="20px"
               style={{ height: "20px", width: "auto" }}
+              unoptimized
             />
           </div>
         )}

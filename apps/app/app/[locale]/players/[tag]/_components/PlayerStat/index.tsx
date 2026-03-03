@@ -23,6 +23,7 @@ export default function PlayerStat({
           width={28}
           height={28}
           sizes={"28px"}
+          unoptimized
         />
         <p>{value}</p>
       </div>

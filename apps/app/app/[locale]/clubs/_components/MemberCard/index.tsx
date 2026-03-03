@@ -29,6 +29,7 @@ export default function MemberCard({
           width={40}
           height={40}
           sizes={"40px"}
+          unoptimized
         />
         <div className={styles.nameAndRoleContainer}>
           <h3
@@ -45,6 +46,7 @@ export default function MemberCard({
             height={12}
             sizes={"16px"}
             className={styles.trophyImg}
+            unoptimized
           />
           <h3 className={styles.clubTrophy}>{member.trophies}</h3>
       </div>
