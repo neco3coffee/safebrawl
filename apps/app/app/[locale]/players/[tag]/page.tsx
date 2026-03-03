@@ -30,7 +30,6 @@ export default async function Page({
   
   // プレイヤー情報とバトルログをネットワーク経由で並列取得
   // 並列で取得することで待ち時間を最小化
-  console.time('fetch-parallel');
   const [playerInfoResponse, playerBattleLogResponse, brawlersResponse] = await Promise.all([
     fetch(`${proxyTargetUrl}/v1/players/%23${encodeURIComponent(tag)}`, {
       next: { revalidate: 60 }
@@ -42,7 +41,6 @@ export default async function Page({
       next: { revalidate: 86400 }
     })
   ]);
-  console.timeEnd('fetch-parallel');
 
   const playerInfo = await playerInfoResponse.json() as Player;
   const playerBattleLog = await playerBattleLogResponse.json() as BattleLog;
