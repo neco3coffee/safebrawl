@@ -2,6 +2,7 @@ import { Brawler } from "shared/brawl-stars-api/types"
 import styles from "./index.module.scss"
 import Image from "next/image"
 import { brawlerBgColor } from "../../../../../../_libs/brawlerRarity"
+import PowerBadge from "../PowerBadge"
 
 export default function BrawlerCard({
   brawler,
@@ -43,10 +44,12 @@ export default function BrawlerCard({
           alt={brawler.name}
           fill
         />
-        {/* FIXME: キャrクターのpowerのバッジをもっとゲームのUIに寄せたい */}
-        <span className={styles.powerBadge}>
-          {brawler.power}
-        </span>
+
+        <PowerBadge
+          power={brawler.power}
+          hyperCharges={brawler.hyperCharges}
+          buffies={brawler.buffies}
+        />
         
         <h4 className={styles.brawlerName}>
           {brawler.name}

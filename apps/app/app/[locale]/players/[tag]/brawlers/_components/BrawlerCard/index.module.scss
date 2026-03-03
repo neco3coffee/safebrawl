@@ -80,31 +80,12 @@
     aspect-ratio: 115 / 73;
     position: relative;
 
-    .powerBadge {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      left: -4px;
-      bottom: -5px;
-      padding: 6px;
-      background-color: #FE00D6;
-      border-radius: 50%;
-      border: 3px solid var(--black);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      -webkit-text-stroke: 1px var(--black);
-      paint-order: stroke fill;
-      color: var(--white);
-      font-weight: bold;
-    }
-
     .brawlerName {
       position: absolute;
       right: 4px;
       bottom: 4px;
       z-index: 10000;
-      font-size: 11px;
+      font-size: 10px;
       color: var(--white);
       font-weight: bold;
       text-shadow: 

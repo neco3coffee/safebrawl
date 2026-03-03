@@ -44,11 +44,13 @@ export interface Brawler {
   gears: Gear[] | []
   starPowers: StarPower[] | []
   hyperCharges: HyperCharge[] | []
-  buffies: {
-    gadget: boolean
-    starPower: boolean
-    hyperCharge: boolean
-  }
+  buffies: Buffies
+}
+
+export interface Buffies {
+  gadget: boolean
+  starPower: boolean
+  hyperCharge: boolean
 }
 
 export interface HyperCharge {
