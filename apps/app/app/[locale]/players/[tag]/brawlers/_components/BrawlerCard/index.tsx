@@ -12,6 +12,12 @@ export default function BrawlerCard({
   return (
     <div className={styles.brawlerCard} key={brawler.id}>
       <div className={styles.topContainer}>
+
+        {/* TODO: prestigeLevel表記でbrawlerのtrophyを表示する */}
+        {/* 0〜1000 => 0 */}
+        {/* 1000〜2000 => 1 */}
+        {/* 2000〜3000 => 2 */}
+        {/* 3000〜 => 3 */}
         <div className={styles.brawlerTrophyContainer}>
           <Image
             src="/icon_trophy1.png"
@@ -41,6 +47,10 @@ export default function BrawlerCard({
         <span className={styles.powerBadge}>
           {brawler.power}
         </span>
+        
+        <h4 className={styles.brawlerName}>
+          {brawler.name}
+        </h4>
       </div>
 
       {/* TODO: brawlerのギア・スタパ・ガジェットをどこかで見れるようにする */}
