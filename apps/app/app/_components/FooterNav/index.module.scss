@@ -1,9 +1,12 @@
 .footer {
   position: fixed;
-  bottom: -1px;
+  bottom:0 ;
+  padding-bottom: env(safe-area-inset-bottom);
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 1000;
-  height: 53px;
+  min-height: calc(53px + env(safe-area-inset-bottom));
   background-color: var(--black);
   border-top: 1px solid var(--black-border);
   display: flex;
