@@ -2,7 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale, getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "../_i18n/routing";
-import Footer from "@/_components/Footer";
+import FooterNav from "@/_components/FooterNav";
 import BackButton from "@/_components/BackButton";
 import ReloadButton from "@/_components/ReloadButton";
 
@@ -38,7 +38,7 @@ export default async function LocaleLayout({
       <main>
         {children}
       </main>
-      <Footer locale={locale} />
+      <FooterNav locale={locale} />
       <BackButton />
       <ReloadButton />
     </NextIntlClientProvider>

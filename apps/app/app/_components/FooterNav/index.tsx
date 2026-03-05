@@ -5,7 +5,7 @@ import { UserRound, House, ScrollText} from "lucide-react";
 import { usePathname } from "next/navigation";
 
 
-export default function Footer({
+export default function FooterNav({
   locale,
 }: {
   locale: string;
