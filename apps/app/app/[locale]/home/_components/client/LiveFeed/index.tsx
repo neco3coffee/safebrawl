@@ -69,7 +69,7 @@ export default function LiveFeed({ locale }: { locale: string }) {
           // アニメーション終了後にnewIdsをクリア
           setTimeout(() => {
             reversed.forEach((e) => newIdsRef.current.delete(e.id));
-          }, 800);
+          }, 3000);
         })
         .catch(() => {});
     }, 5000);
