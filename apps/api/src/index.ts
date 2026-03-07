@@ -46,7 +46,7 @@ app.post('/api/track', async (c) => {
   const ip = c.req.header('CF-Connecting-IP') ?? 'unknown'
   const created_at = Math.floor(Date.now() / 1000)
 
-  // スパム防止: 同一IP+タグの10秒以内の連続検索を防ぐ
+  // スパム防止: 同一IP+タグの60秒以内の連続検索を防ぐ
   const kvKey = `recent_search:${ip}:${player_tag}`
   const existing = await c.env.KV.get(kvKey)
   if (existing) {
@@ -58,7 +58,7 @@ app.post('/api/track', async (c) => {
       `INSERT INTO search_events (player_tag, player_name, icon_id, country, created_at)
        VALUES (?, ?, ?, ?, ?)`
     ).bind(player_tag, player_name, icon_id, country, created_at).run(),
-    c.env.KV.put(kvKey, '1', { expirationTtl: 10 }),
+    c.env.KV.put(kvKey, '1', { expirationTtl: 60 }),
   ])
 
   return c.json({ ok: true })
