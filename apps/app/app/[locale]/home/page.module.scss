@@ -9,7 +9,7 @@
 
 .searchWrapper {
   position: fixed;
-  bottom: 50px;
+  bottom: calc(50px + env(safe-area-inset-bottom));
   z-index: 10;
   width: 100%;
   display: flex;
