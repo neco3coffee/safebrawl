@@ -1,0 +1,89 @@
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin-top: 24px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 120px;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--foreground);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--foreground) 5%, transparent);
+  border: 2px solid var(--blue-black);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.15s;
+
+  &:hover {
+    background: color-mix(in srgb, var(--foreground) 10%, transparent);
+  }
+}
+
+.cardNew {
+  animation: slideInFromRight 0.35s ease-out both;
+}
+
+.icon {
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.name {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tag {
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.meta {
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.metaTime {
+  opacity: 0.45;
+}

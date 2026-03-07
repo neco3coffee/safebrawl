@@ -1,7 +1,6 @@
 import TagInput from "./_components/client/TagInput";
+import LiveFeed from "./_components/client/LiveFeed";
 import styles from "./page.module.scss";
-import { setRequestLocale, getTranslations } from "next-intl/server";
-
 export default async function Page({
   params,
 }: Readonly<{
@@ -9,11 +8,12 @@ export default async function Page({
 }>) {
   const { locale } = await params;
 
-  const t = await getTranslations("home");
-
   return (
     <div className={styles.container}>
-      <TagInput locale={locale} />
+      <div className={styles.searchWrapper}>
+        <TagInput locale={locale} />
+      </div>
+      <LiveFeed locale={locale} />
     </div>
   )
 } 

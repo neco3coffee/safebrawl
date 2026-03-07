@@ -12,6 +12,22 @@
   "vars": {
     "PROXY_TARGET_URL": "https://proxy.safebrawl.com"
   },
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "REPLACE_WITH_KV_ID"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "safebrawl-db-dev",
+      "database_id": "REPLACE_WITH_D1_ID"
+    }
+  ],
+  "triggers": {
+    "crons": ["0 0 * * *"]
+  },
   "env": {
     "production": {
       "name": "safebrawl-api-prod",
@@ -23,7 +39,20 @@
       ],
       "vars": {
         "PROXY_TARGET_URL": "https://proxy.safebrawl.com"
-      }
+      },
+      "kv_namespaces": [
+        {
+          "binding": "KV",
+          "id": "REPLACE_WITH_KV_ID_PROD"
+        }
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "safebrawl-db",
+          "database_id": "REPLACE_WITH_D1_ID_PROD"
+        }
+      ]
     },
     "development": {
       "name": "safebrawl-api-dev",
@@ -35,34 +64,22 @@
       ],
       "vars": {
         "PROXY_TARGET_URL": "https://proxy.safebrawl.com"
-      }
+      },
+      "kv_namespaces": [
+        {
+          "binding": "KV",
+          "id": "280f6f347d9f4d78b56a0d244d3596ca"
+        }
+      ],
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "safebrawl-db-dev",
+          "database_id": "2c4705fe-0e47-4e57-a192-ad7955e7ba07"
+        }
+      ]
     }
   },
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "MY_KV_NAMESPACE",
-  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  //   }
-  // ],
-  // "r2_buckets": [
-  //   {
-  //     "binding": "MY_BUCKET",
-  //     "bucket_name": "my-bucket"
-  //   }
-  // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
-  // "ai": {
-  //   "binding": "AI"
-  // },
   "observability": {
     "enabled": true,
   }

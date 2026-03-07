@@ -20,6 +20,7 @@ jobs:
       API_URL: ${{ secrets.API_URL }}
       PROXY_TARGET_URL: ${{ secrets.PROXY_TARGET_URL }}
       NEXT_PUBLIC_ENV: dev
+      NEXT_PUBLIC_API_URL: https://dev-api.safebrawl.com
 
 
     steps:
