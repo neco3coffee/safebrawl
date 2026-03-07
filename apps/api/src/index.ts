@@ -20,7 +20,7 @@ type SearchEvent = {
 const app = new Hono<{ Bindings: Bindings }>()
 app.use('*', logger())
 app.use('*', cors({
-  origin: ['https://safebrawl.com', 'https://dev.safebrawl.com', 'http://localhost:3333'],
+  origin: ['https://safebrawl.com', 'https://dev-app.safebrawl.com', 'http://localhost:3333'],
   allowMethods: ['GET', 'POST', 'OPTIONS'],
   allowHeaders: ['Content-Type'],
 }))
