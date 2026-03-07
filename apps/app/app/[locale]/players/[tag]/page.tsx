@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import styles from "./page.module.scss";
 import { BattleLog, Player, Club, Member, Brawlers } from "shared/brawl-stars-api/types"
 import SearchedPlayerToLocalStorage from "./_components/SearchedPlayerToLocalStorage";
+import TrackSearchEvent from "./_components/TrackSearchEvent";
 import Link from "next/link";
 import PlayerName from "./_components/PlayerName";
 import Image from "next/image";
@@ -84,6 +85,7 @@ export default async function Page({
   return (
     <>
       <SearchedPlayerToLocalStorage playerTag={tag} playerName={playerInfo.name} />
+      <TrackSearchEvent playerTag={playerInfo.tag} playerName={playerInfo.name} iconId={playerInfo.icon.id} />
       {/* <div className={styles.container}>
         {name && <h2>{name}</h2>}
         <p data-testid="brawler-item-count">{brawlers && brawlers.length}</p>
