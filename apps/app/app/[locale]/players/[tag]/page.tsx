@@ -57,7 +57,7 @@ export default async function Page({
       next: { revalidate: 3600 }
     })
     clubInfo = await clubInfoResponse.json();
-    matchedPlayer = clubInfo?.members.find(member => member.tag === playerInfo.tag);
+    matchedPlayer = clubInfo?.members?.find(member => member.tag === playerInfo.tag);
   } else {
     clubInfo = null;
     matchedPlayer = undefined;

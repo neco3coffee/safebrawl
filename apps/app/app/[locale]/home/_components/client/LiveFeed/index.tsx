@@ -112,8 +112,9 @@ export default function LiveFeed({ locale }: { locale: string }) {
                 </span>
                 <span className={styles.tag}>#{tag}</span>
                 <span className={styles.meta}>
-                  {countryFlag(event.country)}
+                  🔍{countryFlag(event.country)}
                   <span className={styles.metaTime}>· {timeAgo(event.created_at)}</span>
+                  🌏
                 </span>
               </div>
             </Link>
